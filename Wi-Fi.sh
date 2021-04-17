@@ -24,6 +24,9 @@
 sudo chmod 666 /dev/tty1
 printf "\033c" > /dev/tty1
 
+# hide cursor
+printf "\e[?25l" > /dev/tty1
+
 export TERM=linux
 export XDG_RUNTIME_DIR=/run/user/$UID/
 
