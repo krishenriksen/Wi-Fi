@@ -52,10 +52,23 @@ Select() {
   # get password from input
   PASS=`$KEYBOARD -p "Enter Wi-Fi password" | tail -n 1`
 
-  dialog --infobox "\nConnecting to Wi-Fi $1 ..." 5 50 > /dev/tty1
+  echo $PASS > /home/ark/bla
+
+  dialog --infobox "\nConnecting to Wi-Fi $1 ..." 5 55 > /dev/tty1
 
   # try to connect
+  output=`nmcli con delete "$1"`
   output=`nmcli device wifi connect "$1" password "$PASS"`
+
+  echo $output > /home/ark/bla
+
+  success=`echo "$output" | grep successfully`
+
+  if [ -z "$success" ]; then
+    output="Activation failed: Secrets were required, but not provided ..."
+  else
+    output="Device successfully activated and connected to Wi-Fi ..."
+  fi
   
   dialog --infobox "\n$output" 6 55 > /dev/tty1
   sleep 3
@@ -118,5 +131,5 @@ MainMenu() {
   done
 }
 
-dialog --infobox "\nScanning available Wi-Fi access points ..." 5 50 > /dev/tty1
+dialog --infobox "\nScanning available Wi-Fi access points ..." 5 55 > /dev/tty1
 MainMenu
