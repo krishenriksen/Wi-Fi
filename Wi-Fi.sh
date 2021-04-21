@@ -44,7 +44,8 @@ ExitMenu() {
 Select() {
   KEYBOARD="osk-sdl"
 
-  if ! command -v $KEYBOARD &> /dev/null; then
+  if ! command -v $KEYBOARD &> /dev/null
+  then
     KEYBOARD="./osk-sdl"
 
     if [ ! -f "$KEYBOARD" ]; then
