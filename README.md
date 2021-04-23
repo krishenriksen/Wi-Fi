@@ -1,7 +1,7 @@
-Wi-Fi dialog using AnberPorts oga_controls and osk-sdl
----
+# Wi-Fi dialog using AnberPorts oga_controls and osk-sdl
 
-### Support the project
+Support the project
+---
 
 [![Donate](https://github.com/krishenriksen/AnberPorts/raw/master/donate.png)](https://www.paypal.me/krishenriksendk)
 [![Patreon](https://github.com/krishenriksen/AnberPorts/raw/master/patreon.png)](https://www.patreon.com/bePatron?u=54003740)
