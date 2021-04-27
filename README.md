@@ -1,5 +1,7 @@
 # Wi-Fi dialog using AnberPorts oga_controls and osk-sdl
 
+Depends on `dialog`
+
 Support the project
 ---
 
