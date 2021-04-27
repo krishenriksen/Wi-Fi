@@ -30,11 +30,6 @@ printf "\e[?25l" > /dev/tty1
 export TERM=linux
 export XDG_RUNTIME_DIR=/run/user/$UID/
 
-if ! dpkg -s "dialog" &> /dev/null ; then
-  printf "\e[32mInstalling dependencies ...\n" > /dev/tty1
-  sudo apt update && sudo apt install -y dialog --no-install-recommends
-fi
-
 ExitMenu() {
   printf "\033c" > /dev/tty1
   pgrep -f oga_controls | sudo xargs kill -9
